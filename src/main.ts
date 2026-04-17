@@ -8,6 +8,7 @@ import { ScrollReveal, BackToTop, ScrollProgress,
          CounterAnimation }                               from './scroll';
 import { LiveClock, FooterWave, SocialHoverEffect,
          FooterGradientPulse, updateCopyrightYear }       from './footer';
+import { BiometricRealtimeFeed }                          from './biometric';
 import type { CounterConfig }                             from './types';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,5 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
   new LiveClock('#footer-clock');
   new SocialHoverEffect('.social-icons a');
   updateCopyrightYear('#copyright');
+
+  // ── 9. Biometric real-time feed (ZKTeco N9) ────────────────────────────
+  if (document.getElementById('biometric-feed')) {
+    new BiometricRealtimeFeed('biometric-feed', {
+      model:    'ZKTeco N9',
+      ip:       '192.168.1.201',
+      serial:   'BKF2309140042',
+      firmware: 'Ver 6.60 Apr 12 2023',
+    });
+  }
 
 });
