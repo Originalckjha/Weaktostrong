@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Weaktostrong professional web services site",
   "scripts": {
-    "build": "esbuild src/main.ts --bundle --outfile=bundle.js --target=es2020 --minify",
+    "build": "node build.mjs",
     "build:dev": "esbuild src/main.ts --bundle --outfile=bundle.js --target=es2020 --sourcemap",
     "watch": "esbuild src/main.ts --bundle --outfile=bundle.js --target=es2020 --watch",
     "typecheck": "tsc --noEmit"
   },
-  "devDependencies": {
+  "dependencies": {
     "esbuild": "^0.20.2",
     "typescript": "^5.4.5"
   }
